@@ -12,8 +12,6 @@ import com.github.scribejava.core.oauth.OAuth20Service;
 
 import org.fuckboilerplate.rx_social_connect.Response;
 import org.fuckboilerplate.rx_social_connect.RxSocialConnect;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,8 +21,8 @@ import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.user_id)
-    TextView mUserId;
+    @BindView(R.id.json)
+    TextView mJson;
 
     private GetDropboxInfoTask getDropboxInfoTask;
 
@@ -80,12 +78,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayResponse(String text) {
-        try {
-            JSONObject jsonObject = new JSONObject(text);
-            mUserId.setText(jsonObject.optString("account_id"));
-        } catch (JSONException e) {
-            showError("Blad json");
-            e.printStackTrace();
-        }
+        mJson.setText(text);
     }
 }
