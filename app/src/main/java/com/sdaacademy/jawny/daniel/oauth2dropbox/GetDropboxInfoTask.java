@@ -7,7 +7,7 @@ import java.io.IOException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-public class GetGitHubInfoTask extends AsyncTask<String, Integer, String> {
+public class GetDropboxInfoTask extends AsyncTask<String, Integer, String> {
 
     private MainActivity mainActivity;
 
@@ -43,7 +43,7 @@ public class GetGitHubInfoTask extends AsyncTask<String, Integer, String> {
 
     private String sentRequest(String token) throws IOException {
         Request request = new Request.Builder()
-                .addHeader("Authorization", token)
+                .addHeader("Authorization", "Bearer " + token)
                 .addHeader("Content-Type", "application/json")
                 .url("https://api.dropboxapi.com/2/users/get_current_account")
                 .build();

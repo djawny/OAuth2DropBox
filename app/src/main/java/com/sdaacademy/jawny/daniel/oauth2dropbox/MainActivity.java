@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.scribejava.apis.GitHubApi;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.oauth.OAuth20Service;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.user_id)
     TextView mUserId;
 
-    private GetGitHubInfoTask getGitHubInfoTask;
+    private GetDropboxInfoTask getDropboxInfoTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onNext(Response<MainActivity, OAuth2AccessToken> tokenResponse) {
                         String token = tokenResponse.token().getAccessToken();
                         Log.i("TEST", "token: " + token);
-                        getGitHubInfoTask = new GetGitHubInfoTask();
-                        getGitHubInfoTask.setMainActivity(MainActivity.this);
-                        getGitHubInfoTask.execute(token);
+                        getDropboxInfoTask = new GetDropboxInfoTask();
+                        getDropboxInfoTask.setMainActivity(MainActivity.this);
+                        getDropboxInfoTask.execute(token);
                     }
 
                     @Override
