@@ -1,4 +1,4 @@
-package com.sdaacademy.jawny.daniel.oauth2dropbox;
+package com.sdaacademy.jawny.daniel.oauth2dropbox.net;
 
 import com.github.scribejava.core.builder.api.DefaultApi20;
 import com.github.scribejava.core.extractors.OAuth2AccessTokenJsonExtractor;

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.github.scribejava.core.oauth.OAuth20Service;
+import com.sdaacademy.jawny.daniel.oauth2dropbox.net.DropboxApi;
 
 import org.fuckboilerplate.rx_social_connect.Response;
 import org.fuckboilerplate.rx_social_connect.RxSocialConnect;
